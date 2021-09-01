@@ -43,11 +43,8 @@ head(data_csv) # Ver primeras observaciones
 str(data_csv) # Inspeccionar las variables del dataframe
 
 # Importar bases de datos en formato .xls y .xlsx 
-cat("Importar base de datos: hurto-personas-2020_0.xlsx")
-data_xls = read_excel(path = "" , sheet = "Sheet1" , col_names = TRUE, skip = 9) 
-head(data_xls)
-str(data_xls) 
-
+cat("Importar base de datos: hurto-personas-2020_0.xlsx") # cat() es como un print. Escribe dentro de la consola
+data_xls = read_excel(path = "data_4/input/hurto-personas-2020_0.xlsx" , sheet = "Sheet1" , col_names = TRUE, skip = 9) 
 # Importar bases de datos en formato .dta
 cat("Importar base de datos: Area - Caracteristicas generales (Personas).dta")
 data_dta = read_dta(file = "") 
@@ -61,7 +58,7 @@ head(data_dta)
 str(data_rds) 
 
 # Importar bases de datos en formato .Rdata
-load(file = "data_4/input/Homicidios 2020.Rdata")
+load(file = "data_4/input/Homicidios 2020.Rdata") # unico formato donde no toca colocarle un opbjeto
 head(data_rdata)
 str(data_rdata)
 
@@ -87,7 +84,7 @@ write_dta(data = data_dta ,path = "data_4/output/Area - Caracteristicas generale
 saveRDS(object = data_rds, file = "data_4/output/proyecciones DANE 2005-2020.rds")
 
 # xportar varias bases de datos en formato .Rdata 
-save(data_rds,data_dta,data_xls,data_csv,file = "data_4/output/Datos.Rdata")
+save(data_rds,data_dta,data_xls,data_csv,file = "data_4/output/Datos.Rdata") # Guarda muchos objetos dentro del Rdata (Interesante)
 
   
 #-------------------------#
@@ -121,7 +118,7 @@ data_rdata = import(file = "data_4/input/Homicidios 2020.Rdata")
 
 #---- 1.2.2 Import -------#
 # Informacion extra
-?rio::export
+?rio::export # Los :: son para limitar la busqueda dentro del paquete
 
 # exportar bases de datos en formato .csv
 export(data_csv, "data_4/output/censo 2018.csv" ) 
@@ -157,7 +154,7 @@ convert("data_4/input/proyecciones DANE 2005-2020.rds" ,"data_4/input/proyeccion
 #       1.3  skimr        #
 #-------------------------#
 # Informacion extra
-?skimr::skim()
+?skim()
 
 # 1.3.1 resumen del data -#
 skim(data_csv)
