@@ -14,7 +14,7 @@ Sys.setlocale("LC_CTYPE", "en_US.UTF-8") # Encoding UTF-8
 # tidyverse:
 
 # Limpiar datos antes de esta clase...
-dev.off()
+dev.off() # la funcion de dev.off() basicamente te elimina lo que tengas en la memoria en la seccion de plots
 grid.raster(readPNG("data_5/input/pics/before.png"))
 
 #------------------------------------------------------------------------------#
@@ -189,7 +189,7 @@ nrow(x_right)
 nrow(ocu1)
 cat("mantuvo el numero de filas de ocupado ya que es un right join")
 
-# inner_join
+# inner_join -- Lo que hace es combinar las observaciones que hay en ambas bases
 dev.off()
 grid.raster(readPNG("data_5/input/pics/inner join.png"))
 x_inner = inner_join(c_gen2, ocu2, by = c("directorio","secuencia_p","orden"), suffix = c("", ""))
@@ -255,5 +255,7 @@ export(ocupados_1_2, "data_5/output/ocupados mes 1 & 2.RDS")
 dev.off()
 grid.raster(readPNG("data_5/input/pics/after.png"))
 
-
+# extra de la clase
+c_gen1$directorio %in% ocu1$directorio %>% table()
+ocu1$directorio %in% c_gen1$directorio %>% table()
 
