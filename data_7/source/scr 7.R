@@ -8,6 +8,7 @@ rm(list = ls()) # limpia el entorno de R
 if(!require(pacman)) install.packages("pacman") ; require(pacman) # Instalar la librería pacman
 p_load(tidyverse , rio , skimr , RColorBrewer , ggthemes , hrbrthemes , igraph) # Llamar y/o instalar las librerías de la clase
 
+setwd("/Users/ricardoandressilvatorres/OneDrive - Universidad de los Andes/TallerR - 2021-2/data_r")
 #------------------------------------------------------------------------------#
 #------------- 1.0 Gratificos con el paquete base & dividir pantalla ----------#
 #------------------------------------------------------------------------------#
@@ -81,7 +82,7 @@ display.brewer.all() # + + palletas disponibles
 browseURL("https://mran.microsoft.com/snapshot/2017-02-04/web/packages/ggthemes/vignettes/ggthemes.html",getOption("browser")) # ggtheme package
 browseURL("https://ggplot2.tidyverse.org/reference/theme.html",getOption("browser")) # ggtheme package
 
-iris %>% head() # utilizaremos la base de iris, incluida en el paqete base
+iris %>% head() # utilizaremos la base de iris, incluida en el paquete base
 
 #----------------------------#
 #---- 2.1 ggplot: basics ----#

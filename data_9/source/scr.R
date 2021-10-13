@@ -32,6 +32,7 @@ unidor = function(x, y){
           
          return(palabra)
 }
+# la funcion de paste0 no colocaria espacios
 
 unidor(x = "hola", y = "clase")
 
@@ -132,6 +133,7 @@ browseURL(url = "https://www.datacamp.com/community/tutorials/r-tutorial-apply-f
 #--------------------------------#
 
 # Operaciones por columnas
+summary(mtcars$mpg) # Hubiera tocado colocar muchos summary para poder aplicar a todas las variables
 apply(X = mtcars, MARGIN = 2, FUN = summary) # margin 1 se realiza en por columnas, el dos funciona por medio de filas
 apply(X = mtcars, MARGIN = 2, function(papa) summary(papa)) # se puede escribir en dos maneras diferentes y realiza el mismo efecto, no importa el nombre dentro de los parentesis
 
