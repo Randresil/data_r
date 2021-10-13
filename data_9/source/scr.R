@@ -152,7 +152,7 @@ browseURL(url = "https://www.datacamp.com/community/tutorials/r-tutorial-apply-f
 summary(mtcars$mpg) # Hubiera tocado colocar muchos summary para poder aplicar a todas las variables
 apply(X = mtcars, MARGIN = 2, FUN = summary) # margin 1 se realiza en por columnas, el dos funciona por medio de filas
 
-# esto es equivalente a la linea 150
+# esto es equivalente a la linea 160
 for (i in 1:ncol(mtcars)){
      summary(mtcars[,i]) %>% print()
 }
