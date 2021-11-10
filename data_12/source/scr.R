@@ -93,7 +93,7 @@ ggsave(plot=p , filename="data_12/output/quito_map.pdf" , width=6.5 , height=8)
 browseURL("http://api.census.gov/data/key_signup.html")
 
 # access to Google Maps
-register_google(key = "YOUR GOOGLE MAPS API HERE")
+register_google(key = "YOUR GOOGLE MAPS API HERE") # 2318bd0a022364803267f00e8bfb6e97b96df613
 
 # plot basic map 
 ggmap(get_googlemap(center = c(lon = -78.47524493549128, lat = -0.17743936182761244),
